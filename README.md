@@ -12,7 +12,7 @@ Une **topologie** est une représentation de l'ensemble des connexions qu'il exi
     - avec fil : cuivre, fibre optique, coaxial...
     - sans fil : wifi, bluetooth, infrarouge, lifi...
 
-## Le LAN et le WAN
+## Le LAN et le WAN
 
 - **LAN**
     - Local Area Network
@@ -22,9 +22,9 @@ Une **topologie** est une représentation de l'ensemble des connexions qu'il exi
     - réseau étendu, relie plusieurs LAN entre eux
 
 
-## La fiabilité des réseaux
+## La fiabilité des réseaux
 
- un réseau fiable est :
+un réseau fiable est :
 - **tolérant aux pannes** : si un équipement tombe en panne, le système doit continuer à fonctionner. Une solution est d'utiliser de la **redondance** en doublant les équipements critiques.
 - **évolutif** : augmenter la taille du réseau existant sans dégrader l'expérience des utilisateurs actuels
 - fournit une bonne **qualité de service** : priorisation de certains types de trafic par rapport à d'autres, en réservant un certain nombre de ressources disponibles pour un type de trafic
