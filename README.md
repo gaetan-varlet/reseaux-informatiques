@@ -1,6 +1,8 @@
 # Les réseaux informatiques
 
-## Les différents composants d'un réseau
+## Introduction aux réseaux informatiques
+
+### Les différents composants d'un réseau
 
 Une **topologie** est une représentation de l'ensemble des connexions qu'il existe entre les différents composants du réseau informatique.
 
@@ -12,7 +14,7 @@ Une **topologie** est une représentation de l'ensemble des connexions qu'il exi
     - avec fil : cuivre, fibre optique, coaxial...
     - sans fil : wifi, bluetooth, infrarouge, lifi...
 
-## Le LAN et le WAN
+### Le LAN et le WAN
 
 - **LAN**
     - Local Area Network
@@ -22,10 +24,17 @@ Une **topologie** est une représentation de l'ensemble des connexions qu'il exi
     - réseau étendu, relie plusieurs LAN entre eux
 
 
-## La fiabilité des réseaux
+### La fiabilité des réseaux
 
 un réseau fiable est :
 - **tolérant aux pannes** : si un équipement tombe en panne, le système doit continuer à fonctionner. Une solution est d'utiliser de la **redondance** en doublant les équipements critiques.
 - **évolutif** : augmenter la taille du réseau existant sans dégrader l'expérience des utilisateurs actuels
 - fournit une bonne **qualité de service** : priorisation de certains types de trafic par rapport à d'autres, en réservant un certain nombre de ressources disponibles pour un type de trafic
 - **sécurisé** : les données doivent être protégées des manipulations malencontreuses des utilisateurs ou à des attaquants potentiels (pare-feu, mot de passe, filtrage d'adresses IP...)
+
+
+## La couche physique du modèle OSI
+
+![Les modèles OSI et TCP/IP](img/modeles_OSI_TCP_IP.png "Les modèles OSI et TCP/IP")
+
+### A quoi correspond la couche physique du modèle OSI ?
