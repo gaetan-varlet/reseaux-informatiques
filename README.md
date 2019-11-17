@@ -1,6 +1,6 @@
 # Les réseaux informatiques
 
-## Introduction aux réseaux informatiques
+## Introduction aux réseaux informatiques
 
 ### Les différents composants d'un réseau
 
