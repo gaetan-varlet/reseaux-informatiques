@@ -62,6 +62,7 @@ Le câblage cuivre transmet un signal électrique. Il en existe différents type
 ### Couche physique : Les catégories de câble UTP
 
 - câble de catégorie 3 : pour les lignes téléphoniques
+
 pour transmettre des données :
 - câble de catégorie 5 : 100 Mbits/s
 - câble de catégorie 5e : 1 Gbits/s
