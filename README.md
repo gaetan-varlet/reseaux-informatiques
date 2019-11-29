@@ -187,7 +187,7 @@ Une trame complète a donc :
 
 ### Le fonctionnement d'un switch
 
-Le switch, ou commutateur en français, permet de relier plusieurs ordinateurs pour qu'ils puissent communiquer entre-eux.
+Le **switch**, ou **commutateur** en français, permet de relier plusieurs ordinateurs pour qu'ils puissent communiquer entre-eux.
 
 Plusieurs PC vont être relié à un switch :
 - un PC A (adresse A.A.A) est relié au switch via l'interface Ethernet 0/1
@@ -212,3 +212,88 @@ Lorsque 2 éléments communiquent entre-eux via un câble, ils peuvent échanger
 - en full-duplex, il n'y a pas de problèmes, les données peuvent transiter dans les deux sens en même temps
 
 Aujourd'hui, uniquement du **Full Duplex**. Il est possible de rencontrer du **Half Duplex** sur les anciennes infrastructures.
+
+### Cisco Packet Tracer
+
+C'est unn outil de simulation réseau.
+
+
+## Couche 3 du modèle OSI : Réseau
+
+### Qu'est-ce qu'une adresse IP
+
+L'adresse MAC est une adresse physique d'un équipement.  
+L'**adresse IP** est une **adresse logique** d'un équipement, qui va pouvoir changer dynamiquement.
+
+### Conversion binaire des adresses IPs
+
+Les adresses IPv4 sont codés sur 32 bits, regroupés en groupe de 8 qui correspond à des octets, donc 4 octets. Une adresse IP sous la forme `1.1.1.1` vaut donc en binaire `00000001.00000001.00000001.00000001`.
+
+Pour convertir les adresses IP plus compliqué comme  `192.168.1.2`, on peut utiliser un tableau :
+
+| | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---:
+192 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+168 | 1 | 0 | 1 | 0 | 1 | 0 | 0 | 0
+1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1
+2 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0
+
+192 => 11000000  
+168 => 10101000  
+1 => 00000001  
+2 => 00000010
+
+
+### Rôle de la couche 3 (Réseau) dans la communication
+
+- notion de transport de bout en bout
+- possibilité de mettre des adresses IP sur les hôtes (PC, serveur, objets connectés)
+- encapsulation du paquet de données dans un en-tête de niveau 2 et un en-tête de niveau 3
+- certains équipements comme les routeurs ne font pas attention aux informations présent dans l'en-tête de niveau 2 mais vont directement lire l'en-tête de niveau 3 pour analyser les adresses IP source et destination
+- protocole IP version 4 (IPv4) et protocole IP version 6 (IPv6) sont les principaux protocoles de niveau 3 (il y en a d'autres comme ICMP pour faire des ping)
+
+
+**Caractéristiques du protocole IP**
+
+Un paquet de données va être précédé d'un en-tête de segment. L'ensemble est appelé PDU de couche transport, ou segment.
+
+La couche transport ajoute un en-tête de sorte que les segments puissent être réassemblés une fois arrivés à destination.
+
+Le PDU de couche réseau contient une partie données (le PDU de couche transport) précédé d'un en-tête IP (en-tête de protocole de niveau 3)
+
+La couche réseau ajoute un en-tête de sorte que les paquets puissent être acheminés via des réseaux complexes et atteindre leur destination. Dans les réseaux TCP/IP, le PDU de couche réseau est le paquet IP.
+
+L'en-tête IP est composé de l'adresse IP source puis l'adresse IP de destination. Devant l'en-tête IP, il y a l'en-tête de niveau 2 (en-tête Ethernet la plupart du temps).
+
+L'en-tête IP est **sans connexion**, ce qui veut dire qu'aucune connexion avec la destination n'est établie avant l'envoi des paquets de données. L'expéditeur ignore su le destinataire est présent, si le paquet est arrivé ou encore si le destinataire peut lire le paquet. Le destinataire ignore quand le paquet va arriver.
+
+Un paquet est envoyé depuis un PC avec son en-tête IP, il va passer à travers des routeurs. Les paquets vont être acheminés au mieux vers le destinataire.
+
+Le protocole IP est un protocle de couche réseau dit **non-fiable** car il ne garantit pas que tous les paquets envoyés seront reçus. Le destinataire n'a pas la possibilité de savoir qu'il n'a pas reçu tous les paquets. D'autres protocoles gèrent le processus de suivi des paquets et garantissent leur livraison.
+
+L'avantage du protocole IP est qu'il peut fonctionner quelque soit le support utilisé : cuivre, fibre optique, wifi...
+
+
+### L'en-tête IP de couche 3
+
+Les principaux éléments de l'en-tête IPv4 :
+- la version (4 ou 6)
+- les services différenciés (DS) pour donner une priorité à certains types de trafic
+- le TTL (time to live) : durée de vie du paquet. Une fois le TTL atteint 0, il est supprimé et n'est plus transmis par les routeurs
+- le protocole fait référence au protocole de niveau 4 (TCP et UDP principalement)
+- adresses IP source et destination
+
+### Qu'est qu'un réseau IP ?
+
+
+
+
+
+
+## Le protocole ARP
+
+## Le protocole IPv6
+
+## Couche 4 du modèle OSI - Transport
+
+## Couches 5, 6 et 7 : Session, Présentation et Application
